@@ -1,0 +1,22 @@
+{
+  "name": "gray-matter-action",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "jest",
+    "build": "npx @vercel/ncc build && npx convert-action"
+  },
+  "keywords": [],
+  "author": "Michael Heap <m@michaelheap.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "gray-matter": "^4.0.3",
+    "slugify": "^1.5.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
