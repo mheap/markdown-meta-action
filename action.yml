@@ -6,4 +6,7 @@ runs:
 branding:
   icon: edit-2
   color: orange
-
+inputs:
+  file:
+    description: The file to read
+    required: true
