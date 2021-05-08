@@ -7,8 +7,7 @@ beforeEach(() => {
 });
 
 afterEach(() => {
-  core.getInput.mockRestore();
-  jest.clearAllMocks();
+  jest.restoreAllMocks();
 });
 
 it("parses simple front matter", async () => {
@@ -52,6 +51,10 @@ it("reads the filename provided", async () => {
   jest.spyOn(fs, "readFile").mockImplementation(() => Promise.resolve(""));
   await action();
   expect(fs.readFile).toBeCalledWith("./demo-file");
+});
+
+it("throws with missing input", async () => {
+  expect(action).rejects.toThrow("Input required and not supplied: file");
 });
 
 function mockFile(content) {
